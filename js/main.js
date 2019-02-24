@@ -15,9 +15,31 @@
 		return profile;
 	}
 
+	function showProfile(user) {
+		profile.innerHTML = `		
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="${user.avatar_url}"/>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Repositórios: <span class="badge badge-success">${user.public_repos}</span></li>
+							<li class="list-group-item">Seguidores: <span class="badge badge-primary">${user.followers}</span></li>
+							<li class="list-group-item">Seguindo: <span class="badge badge-info">${user.following}</span></li>
+						</ul>
+						<div class="card-body">
+							<a href="${user.html_url}" target="blank" class="btn btn-warning btn-block">Ver perfil</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8"><div id="repos"></div></div>
+			</div>`;
+	}
+
 	search.addEventListener("keyup", e => {
 		const user = e.target.value;
 
-		getUser(user).then(res => console.log(res));
+		if (user.length > 0) {
+			getUser(user).then(res => showProfile(res)); 
+		}
 	});
 })();
