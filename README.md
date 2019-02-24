@@ -1,2 +1,3 @@
-# github-users
-API Github - Javascript 
+# :rocket: Github Finder
+
+
