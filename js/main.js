@@ -2,8 +2,8 @@
 	const search = document.getElementById('search');
 	const profile = document.getElementById('profile');
 	const url = "https://api.github.com/users";
-	const client_id = "e53febbd554644d70b00";
-	const client_secret = "0eabb5d3af6d3ae419c42913f660f0523a19140e";
+	const client_id = ""; //consuma a API do github para pegar seu ID ;)
+	const client_secret = ""; //consuma a API do github para pegar sua chave secret <3
 	const count = 7;
 	const sort = "created: asc";
 
